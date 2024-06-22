@@ -1,6 +1,7 @@
 package bojalar.poputi.poputi.model;
 
 
+import bojalar.poputi.poputi.model.enums.AnnouncementStatus;
 import bojalar.poputi.poputi.model.enums.AnnouncementType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -46,4 +47,8 @@ public class Announcement {
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user_id;
+
+    @Column
+    @Enumerated(EnumType.STRING)
+    private AnnouncementStatus status;
 }
