@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -43,7 +44,6 @@ public class Announcement {
     @Column(nullable = false)
     private String location_to;
 
-    @Column
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user_id;

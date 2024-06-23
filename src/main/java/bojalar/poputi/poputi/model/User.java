@@ -9,13 +9,14 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 import java.util.List;
 
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Table(name = "users")
 public class User {
-    @org.springframework.data.annotation.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -43,6 +44,6 @@ public class User {
     @Column
     private LocalDate create_date;
 
-    @OneToMany(mappedBy = "user",  cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "id",  cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Announcement> announcements;
 }
