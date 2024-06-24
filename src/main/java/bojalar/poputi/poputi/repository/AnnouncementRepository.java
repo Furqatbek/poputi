@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface AnnouncementRepository extends CrudRepository<Announcement, Long> {
     Announcement findById(long id);
-    Announcement findByTitle(String title);
+    List<Announcement> findByTitle(String title);
     Announcement save(Announcement announcement);
     List<Announcement> findAll();
 }

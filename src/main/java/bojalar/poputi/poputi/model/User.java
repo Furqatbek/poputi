@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -42,6 +43,7 @@ public class User {
     private String surname;
 
     @Column
+    @CreatedDate
     private LocalDate create_date;
 
     @OneToMany(mappedBy = "id",  cascade = CascadeType.ALL, fetch = FetchType.LAZY)

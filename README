@@ -1,0 +1,96 @@
+# Poputi
+
+## Introduction
+
+Welcome to Poputi, a Spring Boot application designed to facilitate communication between passengers and drivers in a marketplace environment. This project aims to provide a platform where users can post announcements to find rides or passengers easily.
+
+## Technologies Used
+
+- Spring Boot
+- Spring Data JPA
+- PostgreSQL
+- Lombok
+- Maven
+
+## Getting Started
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone <repository-url>
+   cd poputi
+   ```
+
+2. **Set up the database**:
+
+   - Create a PostgreSQL database named `poputi`.
+   - Update the database configuration in `application.properties` file.
+
+3. **Build and run the application**:
+
+   - Using Maven:
+
+     ```bash
+     mvn clean install
+     mvn spring-boot:run
+     ```
+
+
+## Endpoints Documentation
+
+
+
+### Base URL
+
+The base URL for accessing all endpoints in this API is:
+
+Certainly! Here's an example of how you can write an introduction for your project in the README file:
+
+---
+
+# Project Name
+
+## Introduction
+
+Welcome to **Project Name**, a Spring Boot application designed to facilitate communication between passengers and drivers in a marketplace environment. This project aims to provide a platform where users can post announcements to find rides or passengers easily.
+
+### Key Features
+
+- **User Management**: Allows registration, authentication, and profile management for both passengers and drivers.
+- **Announcement Posting**: Enables users to create announcements specifying their ride requirements or availability.
+- **Search and Matching**: Facilitates searching for announcements based on criteria such as pickup/dropoff locations, date, and time.
+- **Messaging**: Potential for integrating messaging functionality between users to finalize ride details.
+
+### Technologies Used
+
+- **Spring Boot**: For building and managing the backend services.
+- **Spring Data JPA**: For simplified data access and management using ORM with Hibernate.
+- **PostgreSQL**: As the relational database management system.
+- **Lombok**: For reducing boilerplate code in Java classes.
+- **Maven/Gradle**: For dependency management and build automation.
+
+## Getting Started
+
+To get started with **Project Name**, follow these steps:
+
+
+   - Using Gradle:
+
+     ```bash
+     gradle build
+     gradle bootRun
+     ```
+
+4. **Access the API documentation**:
+
+## API Endpoints
+
+Explore the API endpoints for **Poputi**:
+
+- **User Endpoints**: `/api/users`
+  - GET: Retrieve users
+  - POST: Create a new user
+
+- **Announcement Endpoints**: `/api/announcements`
+  - GET: Retrieve announcements
+  - POST: Create a new announcement

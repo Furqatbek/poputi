@@ -1,8 +1,10 @@
 package bojalar.poputi.poputi.controller;
 
+import bojalar.poputi.poputi.dto.AnnouncementDTO;
 import bojalar.poputi.poputi.model.Announcement;
 import bojalar.poputi.poputi.service.AnnouncementService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,22 +20,27 @@ public class AnnouncementController {
     }
 
     @GetMapping
-    public List<Announcement> getAnnouncements() {
-        return announcementService.findAll();
+    public ResponseEntity<List<AnnouncementDTO>> getAnnouncements() {
+        List<AnnouncementDTO> announcements = announcementService.findAllAnnouncements();
+        return ResponseEntity.ok(announcements);
     }
 
     @GetMapping("/{id}")
-    public Announcement getAnnouncement(@PathVariable long id) {
-        return announcementService.findById(id);
+    public ResponseEntity<AnnouncementDTO> getAnnouncementById(@PathVariable("id") long id) {
+        AnnouncementDTO announcement = announcementService.findAnnouncementById(id);
+        return ResponseEntity.ok(announcement);
     }
 
     @GetMapping("/{title}")
-    public Announcement getAnnouncementByTitle(@PathVariable String title) {
-        return announcementService.findByTitle(title);
+    public ResponseEntity<AnnouncementDTO> getAnnouncementByTitle(@PathVariable("title") String title) {
+        List<AnnouncementDTO> announcement = announcementService.findAnnuncementByTitle(title);
+        return ResponseEntity.ok((AnnouncementDTO) announcement);
     }
 
     @PostMapping
-    public Announcement createAnnouncement(@RequestBody Announcement announcement) {
-        return announcementService.save(announcement);
+    public ResponseEntity<AnnouncementDTO> createAnnouncement(@RequestBody AnnouncementDTO announcement) {
+        AnnouncementDTO result = announcementService.createAnnouncement(announcement);
+        return ResponseEntity.ok(result);
     }
+
 }

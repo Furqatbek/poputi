@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDate;
 
@@ -33,6 +34,7 @@ public class Announcement {
     private AnnouncementType type;
 
     @Column
+    @CreatedDate
     private LocalDate create_date;
 
     @Column
@@ -51,4 +53,9 @@ public class Announcement {
     @Column
     @Enumerated(EnumType.STRING)
     private AnnouncementStatus status;
+
+    @PrePersist
+    public void prePersist() {
+        active = true;
+    }
 }
