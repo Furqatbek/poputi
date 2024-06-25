@@ -1,5 +1,6 @@
 package bojalar.poputi.poputi.model;
 
+import bojalar.poputi.poputi.model.enums.UserType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -45,6 +46,9 @@ public class User {
     @Column
     @CreatedDate
     private LocalDate create_date;
+
+    @Column
+    private UserType user_type;
 
     @OneToMany(mappedBy = "id",  cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Announcement> announcements;

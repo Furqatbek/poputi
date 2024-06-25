@@ -1,5 +1,6 @@
 package bojalar.poputi.poputi.dto;
 
+import bojalar.poputi.poputi.model.enums.UserType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,4 +18,5 @@ public class UserDTO {
     private boolean active;
     private String last_name;
     private LocalDate create_date;
+    private UserType user_type;
 }

@@ -17,6 +17,7 @@ public class UserMapper {
         user.setPhone_number(dto.getPhone_number());
         user.setActive(dto.isActive());
         user.setLast_name(dto.getLast_name());
+        user.setUser_type(dto.getUser_type());
         return user;
     }
     public UserDTO toDto(User user) {
@@ -30,6 +31,7 @@ public class UserMapper {
         dto.setActive(user.getActive());
         dto.setUser_name(user.getUsername());
         dto.setLast_name(user.getLast_name());
+        dto.setUser_type(user.getUser_type());
         return dto;
     }
 }
